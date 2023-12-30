@@ -21,8 +21,6 @@ pub fn median(mut numbers: Vec<f64>) -> f64 {
     if length % 2 == 0 {
         return (numbers[length / 2] + numbers[length / 2 - 1]) / 2.0;
     } else {
-        let test = length / 2;
-        println!("{}, {}, {}", numbers.len(), test, numbers[length / 2]);
         return numbers[length / 2];
     }
 }
@@ -35,8 +33,5 @@ pub fn mode() {
 // Finds the difference between the highest number in the dataset and the lowest
 pub fn range(mut numbers: Vec<f64>) -> f64 {
     numbers.sort_by(|a, b| a.partial_cmp(b).unwrap());
-    let lowest = numbers[0];
-    let highest = numbers[numbers.len() - 1];
-    println!("lowest: {} highest: {}", lowest, highest);
-    return highest - lowest;
+    return numbers[numbers.len() - 1] - numbers[0];
 }
